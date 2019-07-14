@@ -1,4 +1,4 @@
-import { ADD_FRIEND } from "../actions";
+import { ADD_TODO } from "../actions";
 import { type } from "os";
 
 const initialState = {
@@ -11,7 +11,7 @@ const initialState = {
 export const reducer = (state = initialState, action) => {
   //switch logic
   switch (action.type) {
-    case ADD_FRIEND:
+    case ADD_TODO:
       const newTodo = {
         value: action.payload,
         completed: false
