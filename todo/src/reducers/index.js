@@ -1,5 +1,5 @@
+//create reducer
 import { ADD_TODO } from "../actions";
-import { type } from "os";
 
 const initialState = {
   todos: [
@@ -24,3 +24,5 @@ export const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
+// after creating reducer create actions

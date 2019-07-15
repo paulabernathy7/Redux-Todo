@@ -15,3 +15,5 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+
+//after creating store move to reducer
