@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { addNewTodo } from "./actions";
+import { addNewTodo, toggleTodo } from "./actions";
 import { connect } from "react-redux";
 
 class App extends React.Component {
@@ -21,6 +21,11 @@ class App extends React.Component {
     this.setState({ newTodo: "" });
   };
 
+  toggleTodo = (event, todo) => {
+    event.preventDefault();
+    this.props.toggleTodo(todo);
+  };
+
   render() {
     return (
       <div>
@@ -34,8 +39,8 @@ class App extends React.Component {
         <button onClick={this.addTodo}>Add</button>
 
         <div>
-          {this.props.todos.map((todo, index) => (
-            <h4>
+          {this.props.todos.map(todo => (
+            <h4 onClick={event => this.toggleTodo(event, todo)} key={todo}>
               {todo.value}
               {todo.completed}
             </h4>
@@ -55,5 +60,5 @@ const mapStateToProps = state => ({
 // makes itself known to this component.
 export default connect(
   mapStateToProps,
-  { addNewTodo }
+  { addNewTodo, toggleTodo }
 )(App);
