@@ -3,8 +3,8 @@ import { ADD_TODO } from "../actions";
 
 const initialState = {
   todos: [
-    { value: "project", completed: false },
-    { value: "read", completed: false }
+    { value: "Todo Project", completed: false },
+    { value: "Read 12 Rules for Life", completed: false }
   ]
 };
 
